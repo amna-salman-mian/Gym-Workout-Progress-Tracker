@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-//import 'package:gym_workout_tracker/main.dart';
+import 'package:workout_fitness/main.dart';
 
 void main() {
   testWidgets('Counter increments test', (WidgetTester tester) async {

@@ -1,4 +1,4 @@
-name: gym_workout_tracker
+name: workout_fitness
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -41,6 +41,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   flutter_calendar_carousel: ^2.4.2
   simple_circular_progress_bar: ^1.0.2
+  firebase_core: ^2.23.0
 
 
 dev_dependencies:

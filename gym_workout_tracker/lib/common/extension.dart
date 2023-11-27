@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-//import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 
 extension StateExtension on State {
   void mdShowAlert(String title, String message, VoidCallback onPressed,
@@ -28,13 +28,13 @@ extension StateExtension on State {
     );
   }
 
-  void endEditing() {
+  void endEditing(){
     FocusScope.of(context).requestFocus(FocusNode());
   }
 }
 
 extension ExtendDateTime on DateTime {
-  String stringFormat({String format = "yyyy-MM-dd"}) {
+  String stringFormat({String  format = "yyyy-MM-dd"}) {
     return DateFormat(format).format(this);
   }
 }

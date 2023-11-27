@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "980792469017",
+    "project_id": "gym-workout-tracker-c225f",
+    "storage_bucket": "gym-workout-tracker-c225f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980792469017:android:bcccaced2658bb47f76c88",
+        "android_client_info": {
+          "package_name": "com.codeforany.workout_fitness"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBGgVB2QxqFYQwTp-0WAfBm1qR-q7xMrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

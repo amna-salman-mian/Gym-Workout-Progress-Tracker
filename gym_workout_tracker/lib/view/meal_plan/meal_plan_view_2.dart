@@ -3,25 +3,35 @@ import 'package:workout_fitness/view/workout/workout_detail_view.dart';
 import 'package:workout_fitness/common/color_extension.dart';
 import 'package:workout_fitness/common_widget/tab_button.dart';
 
-class ExerciseView2 extends StatefulWidget {
-  const ExerciseView2({super.key});
+class MealPlanView2 extends StatefulWidget {
+  const MealPlanView2({super.key});
 
   @override
-  State<ExerciseView2> createState() => _ExerciseView2State();
+  State<MealPlanView2> createState() => _MealPlanView2State();
 }
 
-class _ExerciseView2State extends State<ExerciseView2> {
+class _MealPlanView2State extends State<MealPlanView2> {
   int isActiveTab = 0;
   List workArr = [
-    {"name": "Push-Up", "image": "assets/img/1.png"},
-    {"name": "Leg extension", "image": "assets/img/2.png"},
     {
-      "name": "Push-Up",
-      "image": "assets/img/5.png",
+      "name": "Breafast",
+      "title": "vegetable, Sandwich",
+      "image": "assets/img/f1.png"
     },
     {
-      "name": "Climber",
-      "image": "assets/img/3.png",
+      "name": "Snack",
+      "title": "Cereal, nuts, butter",
+      "image": "assets/img/f2.png"
+    },
+    {
+      "name": "Breafast",
+      "title": "Vegetables, Sandwich",
+      "image": "assets/img/f3.png",
+    },
+    {
+      "name": "Snack",
+      "title": "Cereal, nut, butter",
+      "image": "assets/img/f4.png",
     },
   ];
 
@@ -43,7 +53,7 @@ class _ExerciseView2State extends State<ExerciseView2> {
               height: 25,
             )),
         title: Text(
-          "Exercise",
+          "Meal Plan",
           style: TextStyle(
               color: TColor.white, fontSize: 20, fontWeight: FontWeight.w700),
         ),
@@ -57,9 +67,8 @@ class _ExerciseView2State extends State<ExerciseView2> {
           child: Row(
             children: [
               Expanded(
-                flex: 3,
                 child: TabButton2(
-                  title: "Full Body",
+                  title: "Water",
                   isActive: isActiveTab == 0,
                   onPressed: () {
                     setState(() {
@@ -69,9 +78,8 @@ class _ExerciseView2State extends State<ExerciseView2> {
                 ),
               ),
               Expanded(
-                flex: 2,
                 child: TabButton2(
-                  title: "Foot",
+                  title: "Food",
                   isActive: isActiveTab == 1,
                   onPressed: () {
                     setState(() {
@@ -80,28 +88,37 @@ class _ExerciseView2State extends State<ExerciseView2> {
                   },
                 ),
               ),
-              Expanded(
-                flex: 2,
-                child: TabButton2(
-                  title: "Arm",
-                  isActive: isActiveTab == 2,
-                  onPressed: () {
-                    setState(() {
-                      isActiveTab = 2;
-                    });
-                  },
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  "assets/img/black_fo.png",
+                  width: 20,
+                  height: 20,
                 ),
               ),
               Expanded(
-                flex: 2,
-                child: TabButton2(
-                  title: "Body",
-                  isActive: isActiveTab == 3,
-                  onPressed: () {
-                    setState(() {
-                      isActiveTab = 3;
-                    });
-                  },
+                child: Text(
+                  "Sunday, AUG 26",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: TColor.secondaryText,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700),
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  "assets/img/next_go.png",
+                  width: 20,
+                  height: 20,
                 ),
               ),
             ],
@@ -109,61 +126,36 @@ class _ExerciseView2State extends State<ExerciseView2> {
         ),
         Expanded(
           child: ListView.builder(
-              padding: EdgeInsets.zero,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
               itemCount: workArr.length,
               itemBuilder: (context, index) {
                 var wObj = workArr[index] as Map? ?? {};
                 return Container(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
                   decoration: BoxDecoration(color: TColor.white),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Image.asset(
-                            wObj["image"].toString(),
-                            width: media.width,
-                            height: media.width * 0.55,
-                            fit: BoxFit.cover,
-                          ),
-                          Container(
-                            width: media.width,
-                            height: media.width * 0.55,
-                            decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(0.5)),
-                          ),
-                          Image.asset(
-                            "assets/img/play.png",
-                            width: 60,
-                            height: 60,
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 4, horizontal: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              wObj["name"],
-                              style: TextStyle(
-                                  color: TColor.secondaryText,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700),
-                            ),
-                            IconButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const WorkoutDetailView()));
-                                },
-                                icon: Image.asset("assets/img/more.png",
-                                    width: 25, height: 25))
-                          ],
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          wObj["image"].toString(),
+                          width: media.width,
+                          height: media.width * 0.55,
+                          fit: BoxFit.cover,
                         ),
+                      ),
+                      Text(
+                        wObj["name"],
+                        style: TextStyle(
+                            color: TColor.secondaryText,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
+                      ),
+                      Text(
+                        wObj["title"],
+                        style: TextStyle(
+                            color: TColor.secondaryText, fontSize: 14),
                       ),
                     ],
                   ),
